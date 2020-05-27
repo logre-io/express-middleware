@@ -2,6 +2,8 @@
   "name": "logreio-express",
   "version": "0.1.0",
   "description": "Logre.IO middleware for Express",
+  "repository": "logre-io/express-middleware",
+  "homepage": "https://github.com/logre-io/express-middleware",
   "main": "./dist/index.js",
   "module": "./esm/index.js",
   "types": "./dist/index.d.ts",
