@@ -1,0 +1,38 @@
+{
+  "name": "logreio-express",
+  "version": "0.1.0",
+  "description": "Logre.IO middleware for Express",
+  "main": "./dist/index.js",
+  "module": "./esm/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**",
+    "esm/**"
+  ],
+  "scripts": {
+    "release": "npm publish",
+    "releaseNext": "npm publish --tag next",
+    "prepare": "npm run build",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:cjs": "rm -rf ./dist && ncc build index.ts -o dist -m",
+    "build:esm": "rm -rf ./esm && tsc --target ESNext --module ES6 --outDir esm"
+  },
+  "keywords": [
+    "logre",
+    "logreio",
+    "logging",
+    "monitoring",
+    "logs",
+    "express"
+  ],
+  "author": "Logre.IO",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^14.0.5",
+    "@zeit/ncc": "^0.22.3",
+    "express": "^4.17.1",
+    "logreio": "^0.1.1",
+    "typescript": "^3.9.3"
+  }
+}
